@@ -21,4 +21,4 @@ echo "
 
 passwd
 grub-install --target=x86_64-efi --efi-directory=/efi
-grub-mkconfig -o /efi/grub
+grub-mkconfig -o /efi/grub/grub.cfg
