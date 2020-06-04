@@ -60,7 +60,7 @@ printf \
 
 # later on...
 pacstrap /mnt base linux linux-firmware vim man-db \
-  man-pages texinfo dhcp iputils net-tools sudo wifi-menu \
+  man-pages texinfo dhcp iputils net-tools sudo \
   dialog netctl grub efibootmgr
 
 genfstab -U /mnt >> /mnt/etc/fstab
