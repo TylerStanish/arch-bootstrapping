@@ -4,22 +4,9 @@ function print_error_message() {
 }
 trap 'print_error_message' ERR
 
-read -p "Enter wifi device: " wifidev
 read -p "Enter block device to install onto: " location
 read -p "Enter block device partition prefix (e.g. /dev/nvme0n1p where partitions are like /dev/nvme0n1p1):" partition_prefix
 read -p "Enter swap space in gigabytes" swap_size
-
-# BEGIN INSTALLATION
-ls /sys/firmware/efi/efivars
-
-# BEGIN NETWORKING
-systemctl disable systemd-networkd.service
-systemctl disable systemd-reolved.service
-ip link set $wifidev down
-wifi-menu
-# verify
-netctl list
-ping -c 3 archlinux.org
 
 timedatectl set-ntp true
 
