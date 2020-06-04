@@ -53,7 +53,7 @@ mount ${partition_prefix}2 /mnt
 # For now, use the Purdue Linux Users Group mirror first!
 printf \
   "%s\n%s\n" \
-  "Server = http://plug-mirror.rcac.purdue.edu/archlinux/$repo/os/$arch" \
+  "Server = http://plug-mirror.rcac.purdue.edu/archlinux/\$repo/os/\$arch" \
   "$(cat /etc/pacman.d/mirrorlist)" \
   > /etc/pacman.d/mirrorlist
 
