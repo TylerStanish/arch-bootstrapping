@@ -59,7 +59,7 @@ printf \
   > /etc/pacman.d/mirrorlist
 
 # later on...
-pacstrap /mnt base linux linux-firmware vim man-db \
+pacstrap /mnt base base-devel linux linux-firmware vim man-db \
   man-pages texinfo dhcp iputils net-tools sudo \
   dialog netctl grub efibootmgr
 
