@@ -38,7 +38,7 @@ t
 3
 19
 w
-"
+" | fdisk $location
 
 mkfs.fat ${partition_prefix}1
 mkfs.ext4 ${partition_prefix}2
