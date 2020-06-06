@@ -7,6 +7,8 @@ trap 'print_error_message' ERR
 read -p "Enter block device to install onto: " location
 read -p "Enter block device partition prefix (e.g. /dev/nvme0n1p where partitions are like /dev/nvme0n1p1):" partition_prefix
 read -p "Enter swap space in gigabytes" swap_size
+read -p "Enter root password" root_password
+read -p "Enter hostname" hostname
 
 timedatectl set-ntp true
 
@@ -77,7 +79,7 @@ echo '
 127.0.1.1 $hostname.localdomain  $hostname
 ' > /etc/hosts
 
-passwd
+echo '$root_password\n$root_password\n' | passwd
 grub-install --target=x86_64-efi --efi-directory=/efi
 grub-mkconfig -o /boot/grub/grub.cfg
 # grub-mkconfig -o /efi/grub.cfg
