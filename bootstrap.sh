@@ -81,7 +81,7 @@ echo '
 127.0.1.1 $hostname.localdomain  $hostname
 ' > /etc/hosts
 
-echo '$root_password\n$root_password\n' | passwd
+echo '$root_password' | passwd '$root_password' --stdin
 grub-install --target=x86_64-efi --efi-directory=/efi
 grub-mkconfig -o /boot/grub/grub.cfg
 # grub-mkconfig -o /efi/grub.cfg
